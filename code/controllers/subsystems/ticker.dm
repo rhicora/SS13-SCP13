@@ -8,14 +8,15 @@ SUBSYSTEM_DEF(ticker)
 	var/lastTickerTime
 
 /datum/controller/subsystem/ticker/Initialize()
-	
 	lastTickerTime = world.timeofday
 
 	if(!ticker)
 		ticker = new
 
-	ticker.pregame()
-	
+	spawn(0)
+		if(ticker)
+			ticker.pregame()
+
 /datum/controller/subsystem/ticker/fire()
 	var/currentTime = world.timeofday
 

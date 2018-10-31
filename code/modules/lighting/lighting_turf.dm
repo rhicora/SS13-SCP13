@@ -41,8 +41,7 @@
 
 		new /atom/movable/lighting_overlay(src)
 
-		for(var/corner in corners)
-			var/datum/lighting_corner/C = corner
+		for(var/datum/lighting_corner/C in corners)
 			if(!C.active) // We would activate the corner, calculate the lighting for it.
 				for(var/L in C.affecting)
 					var/datum/light_source/S = L
